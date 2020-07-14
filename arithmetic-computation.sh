@@ -13,3 +13,9 @@ operation4=$((a % b + c));
 
 declare -A operation_results;
 operation_results=(["Operation_1"]="$operation1" ["Operation_2"]="$operation2" ["Operation_3"]="$operation3" ["Operation_4"]="$operation4");
+
+declare -a array_of_operation_results;
+for result in ${operation_results[@]}
+do
+	array_of_operation_results+=( $result );
+done
