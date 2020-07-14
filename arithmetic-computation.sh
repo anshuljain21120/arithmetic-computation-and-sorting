@@ -19,3 +19,22 @@ for result in ${operation_results[@]}
 do
 	array_of_operation_results+=( $result );
 done
+
+function sort_array_descending()
+{
+	local -n _array=$1;
+	local _array_size=${#_array[@]};
+	for ((index1 = 0; index1<_array_size; index1++))
+	do
+		for((index2 = 0; index2<_array_size-index1-1; index2++))
+		do
+			if [ ${_array[index2]} -lt ${_array[$((index2+1))]} ]
+			then
+				temp=${_array[index2]}
+				_array[$index2]=${_array[$((index2+1))]};
+				_array[$((index2+1))]=$temp;
+			fi
+		done
+	done
+}
+sort_array_descending array_of_operation_results;
