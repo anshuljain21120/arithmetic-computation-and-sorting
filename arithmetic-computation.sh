@@ -11,3 +11,5 @@ operation2=$((a * b + c));
 operation3=$((c + a / b));
 operation4=$((a % b + c));
 
+declare -A operation_results;
+operation_results=(["Operation_1"]="$operation1" ["Operation_2"]="$operation2" ["Operation_3"]="$operation3" ["Operation_4"]="$operation4");
