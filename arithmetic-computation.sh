@@ -5,3 +5,6 @@ echo "This problem computes different arithmetic expressions and Sorts the resul
 read -p "Enter variable a: " a;
 read -p "Enter variable b: " b;
 read -p "Enter variable c: " c;
+
+operation1=$((a + b * c));
+
